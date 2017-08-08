@@ -17,7 +17,7 @@ router.get('/' , (req, res, next) => {
     });
 });
 
-router.post('/' , ev(validations.post), (req, res, next) => {
+router.post('/', ev(validations.body), (req, res, next) => {
   let firstName = req.body.users.firstName;
   let lastName = req.body.users.lastName;
   let username = req.body.users.username;
