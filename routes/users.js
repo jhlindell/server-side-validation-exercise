@@ -18,7 +18,6 @@ router.get('/' , (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req.body);
   let firstName = req.body.users.firstName;
   let lastName = req.body.users.lastName;
   let username = req.body.users.username;
@@ -53,7 +52,7 @@ router.post('/', (req, res, next) => {
   return next(err);
   }
 
-  validateEmail(address){
+  function validateEmail(address){
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(address);
   }
